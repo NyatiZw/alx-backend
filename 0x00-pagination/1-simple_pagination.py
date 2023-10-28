@@ -8,6 +8,7 @@ from typing import List
 
 index_range = __import__('0-simple_helper_function').index_range
 
+
 class Server:
     """ Server class to paginate a database """
     DATA_FILE = "Popular_Baby_Names.csv"
@@ -38,7 +39,6 @@ class Server:
         """
         assert isinstance(page, int) and page > 0,
         assert isinstance(page, int) and page_size > 0,
-
 
         start, end = self.index_range(page, page_size)
         data = self.dataset()
