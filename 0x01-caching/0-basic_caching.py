@@ -33,3 +33,4 @@ class BasicCache(BaseCaching):
         """
         if key is not None:
             return self.cache_data.get(key)
+        return None
