@@ -10,6 +10,7 @@ from typing import List
 # Defining the index_range function
 index_range = __import__('0-simple_heelper_function').index_range
 
+
 class Server:
     """ Server class to paginate a database """
     DATA_FILE = "Popular_Baby_Names.csv"
