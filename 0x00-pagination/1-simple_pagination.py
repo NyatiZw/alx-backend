@@ -35,8 +35,12 @@ class Server:
         Returns:
             List[List]: A list of rows for the specific page
         """
-        assert isinstance(page, int) and page > 0,
-        assert isinstance(page, int) and page_size > 0,
+        if (
+                not isinstance(page, int)
+                or not isinstance(page_size, int)
+                or page <= 0
+                or page_size <= 0
+        ):
 
         start, end = index_range(page, page_size)
         data = self.dataset()
