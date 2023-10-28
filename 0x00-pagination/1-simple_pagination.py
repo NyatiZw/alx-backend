@@ -41,6 +41,7 @@ class Server:
                 or page <= 0
                 or page_size <= 0
         ):
+            return []
 
         start, end = index_range(page, page_size)
         data = self.dataset()
