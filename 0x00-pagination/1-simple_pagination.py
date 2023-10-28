@@ -7,10 +7,6 @@ import math
 from typing import List
 
 
-# Defining the index_range function
-index_range = __import__('0-simple_heelper_function').index_range
-
-
 class Server:
     """ Server class to paginate a database """
     DATA_FILE = "Popular_Baby_Names.csv"
@@ -27,6 +23,9 @@ class Server:
             self.__dataset = dataset[1:]
 
         return self.__dataset
+
+    # Defining the index_range function
+    index_range = __import__('0-simple_heelper_function').index_range
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
         """
