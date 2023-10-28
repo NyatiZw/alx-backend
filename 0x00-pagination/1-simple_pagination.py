@@ -24,9 +24,6 @@ class Server:
 
         return self.__dataset
 
-    # Defining the index_range function
-    index_range = __import__('0-simple_heelper_function').index_range
-
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
         """
         Retrieve a specific page of data from dataset.
