@@ -2,10 +2,8 @@
 """ Simple pagination """
 
 
-
 import csv
 from typing import List
-
 
 
 class Server:
@@ -36,7 +34,11 @@ class Server:
         Returns:
             List[List]: A list of rows for the specific page
         """
-        if not isinstance(page, int) or not isinstance(page_size, int) or page <= 0 or page_size <= 0:
+        if (
+                not isinstance(page, int)
+                or not isinstance(page_size, int)
+                or page <= 0 or page_size <= 0
+        ):
             return []
 
         start, end = index_range(page, page_size)
