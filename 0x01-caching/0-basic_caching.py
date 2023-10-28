@@ -4,6 +4,7 @@
 
 from base_caching import BaseCaching
 
+
 class BasicCache(BaseCaching):
     """A caching system that doesn't have a limit"""
 
@@ -32,4 +33,3 @@ class BasicCache(BaseCaching):
         """
         if key is not None:
             return self.cache_data.get(key)
-        return None
