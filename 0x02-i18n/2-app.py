@@ -4,10 +4,11 @@
 
 from flask import Flask, render_template, request
 from flask_babel import Babel
+from typing import List
 
 
-app = Flask(__name__)
-babel = Babel(app)
+app: Flask = Flask(__name__)
+babel: Babel = Babel(app)
 
 
 class Config:
@@ -30,10 +31,10 @@ def get_local() -> str:
 def index() -> str:
     """Render the index page"""
     return render_template(
-            '2-index.html',
-            title='Welcome to Holberton',
-            header='Hello world'
-        )
+        '2-index.html',
+        title='Welcome to Holberton',
+        header='Hello world'
+    )
 
 
 if __name__ == '__main__':
