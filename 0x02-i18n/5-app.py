@@ -58,7 +58,7 @@ def before_request():
 def index() -> str:
     """Render the index page with translated content"""
     return render_template(
-        'templates/5-index.html',
+        '5-index.html',
         title=_('home_title'),
         header=_('home_header')
     )
