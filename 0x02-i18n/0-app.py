@@ -16,7 +16,7 @@ def index() -> str:
         str: Rendered HTML content.
     """
     return render_template(
-        '0-index.html',
+        'templates/0-index.html',
         title='Welcome to Holberton',
         header='Hello world'
     )
