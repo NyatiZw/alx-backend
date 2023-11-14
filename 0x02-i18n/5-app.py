@@ -36,7 +36,6 @@ app.config.from_object(Config)
 def get_locale() -> str:
     """Determine the best-matching language"""
     user_locale = request.args.get('locale')
-
     if user_locale and user_locale in app.config['LANGUAGES']:
         return user_locale
     else:
