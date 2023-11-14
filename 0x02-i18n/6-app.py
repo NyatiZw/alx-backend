@@ -36,11 +36,17 @@ app.config.from_object(Config)
 def get_locale() -> str:
     """Determine the best-matching language"""
     user_locale = request.args.get('locale')
-
     if user_locale and user_locale in app.config['LANGUAGES']:
         return user_locale
-    else:
-        return request.accept_languages.best_match(app.config['LANGUAGES'])
+
+    if g.user and 'locale' in g.user and g.user['locale'] in app.config['LANGUAGES']:
+        return g.user['locale']
+
+    header_locale = request.accept_languages.best_match(app.config['LANGAUGES'])
+    if header_locale:
+        return header_locale
+
+    return app.config['BABEL_DEFAULT_LOCALE']
 
 
 def get_user(user_id: int) -> dict:
