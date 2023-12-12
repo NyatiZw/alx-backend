@@ -7,7 +7,7 @@ const client = redis.createClient();
 // Event listerner for successful connection
 client.on('connect', () => {
 	console.log('Redis client connected to the server');
-};
+});
 
 // Event listerner for connection errors
 client.on('error', (err) => {
@@ -62,7 +62,7 @@ const displayHash = () => {
 		if (err) {
 			console.error(`Error getting hash values: ${err.message}`);
 		} else {
-			console.log('Object stored in Redis:', result);
+			console.log(result);
 		}
 	});
 };
