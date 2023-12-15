@@ -2,6 +2,7 @@
 
 from base_caching import BaseCaching
 
+
 class FIFOCache(BaseCaching):
     """A caching system that uses the First-In-First-Out (FIFO) algorithm"""
 
@@ -18,7 +19,7 @@ class FIFOCache(BaseCaching):
             item: The item to be stored
 
         If key or item is None, this method does nothing.
-        If the number of items exceeds BaseCaching.MAX_ITEMS, discard the first item (FIFO).
+        If the number of items exceeds BaseCaching.MAX_ITEMS, discard first.
         """
         if key is not None and item is not None:
             if len(self.cache_data) >= BaseCaching.MAX_ITEMS:
@@ -38,9 +39,8 @@ class FIFOCache(BaseCaching):
             key: The key for the item to be retrieved.
 
         Returns:
-            The item linked to the given key, or None if key is None or not in the cache_data.
+            The item linked to the given key, or None.
         """
         if key is not None:
             return self.cache_data.get(key)
         return None
-
