@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+"""Class that inherits from BasCaching"""
+
 
 from base_caching import BaseCaching
 
